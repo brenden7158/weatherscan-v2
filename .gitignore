@@ -121,3 +121,8 @@ typings/
 .DS_Store
 .vscode
 
+# Bun (https://bun.sh)
+.bun/
+# bun.lock (text lockfile) should be committed — do not add it here
+# bun.lockb is the legacy binary lockfile
+bun.lockb

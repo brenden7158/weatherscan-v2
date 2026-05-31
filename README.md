@@ -28,16 +28,29 @@ Need support beyond the scope of this README? A guide for configuring this simul
 
 # Initial Setup (Source code)
 
-1. Install [node.js LTS](https://nodejs.org/en/).
-2. Acquire *weather.com*, *mapbox.com*, *developer.tomtom*, and *HERE.com* . API keys. These are required for weather data, radar frames, and traffic, respectively.
+1. Install [Bun](https://bun.sh/docs/installation) (fast all-in-one JavaScript runtime & package manager).
+2. Acquire *weather.com*, *mapbox.com*, *developer.tomtom*, and *HERE.com* API keys. These are required for weather data, radar frames, and traffic, respectively.
 3. Go to `/main/configs` and open `yourConfig.json`.
-4. Line 4 is where your *weather.com*  API key goes. Replace `"YOUR_API_KEY"` with your *weather.com* API key.
-5. Line 5 is where your *mapbox.com*  API key goes. Replace `"YOUR_API_KEY"` with your *mapbox.com* API key.
-6. Line 6 is where your *developer.tomtom.com*  API key goes. Replace `"YOUR_API_KEY"` with your *developer.tomtom.com* API key. (optional, only if you want traffic report)
-7. Line 7 is where your *HERE.com*  API key goes. Replace `"YOUR_API_KEY"` with your *HERE.com* API key. (optional, only if you want traffic flow)
+4. Line 4 is where your *weather.com* API key goes. Replace `"YOUR_API_KEY"` with your *weather.com* API key.
+5. Line 5 is where your *mapbox.com* API key goes. Replace `"YOUR_API_KEY"` with your *mapbox.com* API key.
+6. Line 6 is where your *developer.tomtom.com* API key goes. Replace `"YOUR_API_KEY"` with your *developer.tomtom.com* API key. (optional, only if you want traffic report)
+7. Line 7 is where your *HERE.com* API key goes. Replace `"YOUR_API_KEY"` with your *HERE.com* API key. (optional, only if you want traffic flow)
 8. Save your changes to `yourConfig.json` and close it.
-9. In terminal / command prompt within the main directory, run `npm install --production`. This will install all dependencies required to run.
-10. In terminal / command prompt within the main directory, run `npm start`. This will start a local web server, which is required to run the sim.
+9. In your terminal within the project directory, run `bun install`. (This project has no external dependencies thanks to Bun, but this step creates the lockfile and prepares scripts.)
+10. Run the simulator with:
+    ```bash
+    bun run start
+    ```
+    Or simply:
+    ```bash
+    bun app.js
+    ```
+    For development with auto-reload on file changes:
+    ```bash
+    bun run dev
+    ```
+
+> **Note:** This project has been adapted to run natively on Bun using its built-in high-performance HTTP server. No more `node_modules` bloat or slow startup!
 
 ------------
 
